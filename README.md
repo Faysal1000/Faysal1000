@@ -325,19 +325,14 @@ print(me.list_current_focus())
 
 <div align="center">
 
-<img height="180" src="https://github-readme-stats.vercel.app/api?username=Faysal1000&show_icons=true&theme=tokyonight&count_private=true&include_all_commits=true" />
-
-&nbsp;&nbsp;
-
-<img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Faysal1000&layout=compact&theme=tokyonight&langs_count=8" />
-
-
-<br/><br/>
-
 [![GitHub Streak](https://streak-stats.demolab.com?user=YOUR_GITHUB_USERNAME&theme=dark&background=000d1a&ring=00F5FF&fire=00D4FF&currStreakLabel=00F5FF&border=003355&sideLabels=99c9e8)](https://git.io/streak-stats)
 
 </div>
 
+<p align="center">
+ <img alt="snake eating my contributions" src="https://raw.githubusercontent.com/checkiamsiam/checkiamsiam/output/github-contribution-grid-snake.svg" />
+ 
+</p>
 ---
 
 ## 🎯 Current Interests
