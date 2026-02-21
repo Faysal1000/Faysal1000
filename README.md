@@ -20,23 +20,122 @@
 
 ```python
 class FaysalAhmmed:
-    def __init__(self):
-        self.name       = "Faysal Ahmmed"
-        self.degree     = "BSc in CSE — American International University-Bangladesh"
-        self.cgpa       = 3.99  # / 4.00
-        self.role       = ["ML Researcher", "Software Engineer"]
-        self.interests  = ["Lead Management Automation","Medical AI", "Computer Vision", "XAI", "Robotics", "IoT"]
-        self.awards     = ["Dean's List ×8", "80% Scholarship", "Best Thesis in AI"]
-        self.fun_fact   = "not loving but laughing 😄"
 
-    def current_focus(self):
-        return [
-            "Backend Development with LLM Automation",
-            "Explainable AI (Grad-CAM, SHAP)",
-            "Segmentation → Classification pipelines",
-            "Medical imaging & stain normalization",
-            "Edge inference on embedded devices",
+    def __init__(self):
+        # === Identity ===
+        self.name = "Faysal Ahmmed"
+        self.location = "Dhaka, Bangladesh"
+        self.degree = "BSc in CSE — American International University-Bangladesh"
+        self.cgpa = "3.99 / 4.00"
+        self.roles = ["Backend Developer","Machine Learning Researcher", "Software Engineer", "Robotics Enthusiast"]
+
+        # === Academic Highlights ===
+        self.awards = [
+            "Dean's List ×8",
+            "80% Academic Scholarship",
+            "Best Thesis in AI",
         ]
+
+        self.research_focus = [
+            "Medical Imaging & AI",
+            "Explainable AI (SHAP, Grad-CAM)",
+            "Computer Vision",
+            "Segmentation → Classification Pipelines",
+            "Edge AI & Embedded Inference"
+        ]
+
+        # === Technical Stack ===
+        self.skills = {
+            "Languages": [
+                "Python", "C++", "C#", "Java", "R",
+                "PHP", "JavaScript", "TypeScript",
+                "Bash", "Assembly"
+            ],
+            "AI / ML": [
+                "TensorFlow", "PyTorch", "Scikit-Learn",
+                "OpenCV", "VLM", "XGBoost", "LightGBM",
+                "CNN Architectures (Xception, EfficientNet, ConvNeXt)"
+            ],
+            "Backend": [
+                "Node.js", "NestJS", "REST APIs", 
+                "JWT Auth", "LLM Automation",
+                "Queue Systems (BullMQ)"
+            ],
+            "Frontend": [
+                "React.js", "Bootstrap", "JQuery"
+            ],
+            "Database": [
+                "MySQL", "PostgreSQL", "MongoDB", "Redis"
+            ],
+            "DevOps & Cloud": [
+                "Docker", "GitHub Actions", "AWS"
+            ],
+            "Embedded & IoT": [
+                "Raspberry Pi",
+                "Arduino",
+                "ESP32-CAM"
+            ]
+        }
+
+        # === Major Projects ===
+        self.projects = [
+            "Skin Cancer Classification with Hair Removal & Multi-Skin Tone Handling",
+            "MRI Brain Tumor Classification (Hybrid ML + Deep Learning)",
+            "XceptionKNN: Hybrid WBC Classification Model",
+            "Automated Home System (Raspberry Pi + Wireless Relays + Voice Control)",
+            "Lead Management System with Semantic Search & Agentic AI"
+        ]
+
+        # === Current Focus ===
+        self.current_work = [
+            "Backend Development with LLM Automation",
+            "Agentic AI Systems",
+            "Explainable AI Integration",
+            "Embedding-based Semantic Search",
+            "Optimizing ML pipelines for CPU-only environments",
+        ]
+
+        # === Vision ===
+        self.ambition = (
+            "To become a globally impactful AI engineer and researcher, "
+            "building intelligent systems that solve real-world problems "
+            "across healthcare, automation, and smart infrastructure."
+        )
+
+        self.fun_fact = "not loving but laughing 😄"
+
+    def introduce(self):
+        return (
+            f"{self.name} is a {', '.join(self.roles)} based in {self.location}.\n"
+            f"Currently pursuing {self.degree} with a CGPA of {self.cgpa}.\n"
+            f"Focused on {', '.join(self.research_focus[:3])}.\n"
+            f"Ambition: {self.ambition}"
+        )
+
+    def list_skills(self):
+        output = "\n=== Technical Skills ===\n"
+        for category, items in self.skills.items():
+            output += f"\n{category}: {', '.join(items)}"
+        return output
+
+    def list_projects(self):
+        return "\n=== Major Projects ===\n" + "\n- ".join([""] + self.projects)
+
+    def list_current_focus(self):
+        return "\n=== Current Focus ===\n" + "\n- ".join([""] + self.current_work)
+
+    def achievements(self):
+        return "\n=== Achievements ===\n" + "\n- ".join([""] + self.awards)
+
+
+# Instantiate
+me = FaysalAhmmed()
+
+print(me.introduce())
+print(me.achievements())
+print(me.list_skills())
+print(me.list_projects())
+print(me.list_current_focus())
 ```
 
 ---
@@ -48,11 +147,11 @@ class FaysalAhmmed:
 
 <br/>
 
-| #   | Title                                                                                                                                   | Status    |
+| #   | Title                                                                                                                                   | Link    |
 | --- | --------------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| 1   | **BTdiagAI:** A Web-Deployed Hybrid Framework for Brain Tumor Classification Using Optimized MRI Preprocessing and Deep Learning Fusion | Published |
-| 2   | **ParkinNet:** A Novel Approach to Classifying Alzheimer's and Parkinson's Diseases Using Brain Structural MRI                          | Published |
-| 3   | Arduino-Controlled Multi-Function Robot with Bluetooth and nRF24L01+ Communication                                                      | Published |
+| 1   | **BTdiagAI:** BTdiagAI: A Web-Deployed Hybrid Framework for Brain Tumor Classification Using Optimized MRI Preprocessing and Deep Learning Fusion | ![Link](https://ietresearch.onlinelibrary.wiley.com/doi/full/10.1049/htl2.70053) |
+| 2   | Arduino-Controlled Multi-Function Robot with Bluetooth and nRF24L01+ Communication                                                      | ![Link](https://pubs2.ascee.org/index.php/IJRCS/article/view/1517) |
+| 3   | **ParkinNet:** A Novel Approach to Classifying Alzheimer's and Parkinson's Diseases Using Brain Structural MRI                          | ![Link](https://revistas.usal.es/cinco/index.php/2255-2863/article/view/32178) |
 
 </details>
 
@@ -226,9 +325,9 @@ class FaysalAhmmed:
 
 <div align="center">
 
-<img height="180" src="https://github-readme-stats.vercel.app/api?username=YOUR_GITHUB_USERNAME&show_icons=true&theme=transparent&title_color=00F5FF&icon_color=00D4FF&text_color=99c9e8&border_color=003355&hide_border=false&count_private=true" />
+<img height="180" src="https://github-readme-stats.vercel.app/api?username=Faysal1000&show_icons=true&theme=transparent&title_color=00F5FF&icon_color=00D4FF&text_color=99c9e8&border_color=003355&hide_border=false&count_private=true" />
 &nbsp;&nbsp;
-<img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_GITHUB_USERNAME&layout=compact&theme=transparent&title_color=00F5FF&text_color=99c9e8&border_color=003355&hide_border=false&langs_count=8" />
+<img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Faysal1000&layout=compact&theme=transparent&title_color=00F5FF&text_color=99c9e8&border_color=003355&hide_border=false&langs_count=8" />
 
 <br/><br/>
 
