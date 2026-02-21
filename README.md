@@ -325,12 +325,11 @@ print(me.list_current_focus())
 
 <div align="center">
 
-
-<img height="180" src="https://github-readme-stats.vercel.app/api?username=Faysal1000&show_icons=true&theme=tokyonight&count_private=true&include_all_commits=true&cache_seconds=86400" />
+<img height="180" src="https://github-readme-stats.vercel.app/api?username=Faysal1000&show_icons=true&theme=tokyonight&count_private=true&include_all_commits=true" />
 
 &nbsp;&nbsp;
 
-<img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Faysal1000&layout=compact&theme=tokyonight&langs_count=8&cache_seconds=86400" />
+<img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Faysal1000&layout=compact&theme=tokyonight&langs_count=8" />
 
 
 <br/><br/>
