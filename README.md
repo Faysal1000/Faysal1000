@@ -201,91 +201,6 @@ print(me.list_current_focus())
 
 ---
 
-## 🚀 Featured Projects
-
-<table>
-<tr>
-<td width="50%">
-
-### 🔬 Skin Cancer Detection + XAI
-
-![Python](https://img.shields.io/badge/-Python-000d1a?style=flat-square&logo=python&logoColor=00F5FF)
-![Deep Learning](https://img.shields.io/badge/-Deep_Learning-000d1a?style=flat-square&logoColor=00F5FF)
-![LLM](https://img.shields.io/badge/-LLM-000d1a?style=flat-square&logoColor=00F5FF)
-
-- 🏆 **99.11% accuracy** across 40 trained DL models
-- Built novel segmentation model + Grad-CAM++ visualizations
-- Fine-tuned MED-GEMMA for natural language explanations
-
-</td>
-<td width="50%">
-
-### 🩸 Blood Cancer Detection System
-
-![Python](https://img.shields.io/badge/-Python-000d1a?style=flat-square&logo=python&logoColor=00F5FF)
-![H&E Staining](https://img.shields.io/badge/-H%26E_Normalization-000d1a?style=flat-square&logoColor=00F5FF)
-
-- DL + ML hybrid model detecting **all subtypes**
-- Advanced H&E stain normalization (Macenko / Vahadane)
-- Deployed as a web application
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-### 🧠 Brain Tumor Detection System
-
-![Python](https://img.shields.io/badge/-Python-000d1a?style=flat-square&logo=python&logoColor=00F5FF)
-![MRI](https://img.shields.io/badge/-MRI_Imaging-000d1a?style=flat-square&logoColor=00F5FF)
-
-- Multi-model feature fusion + ML classifiers
-- Comparative analysis framework for tumor classification
-- Foundation for the BTdiagAI publication
-
-</td>
-<td width="50%">
-
-### 🤖 Arduino Multi-Function Robot
-
-![C++](https://img.shields.io/badge/-C++-000d1a?style=flat-square&logo=cplusplus&logoColor=00F5FF)
-![Arduino](https://img.shields.io/badge/-Arduino-000d1a?style=flat-square&logo=arduino&logoColor=00F5FF)
-
-- Dual wireless control: Bluetooth + nRF24L01+
-- Published research paper on the architecture
-- Robotics + embedded systems integration
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-### 🍔 Hungry Heroes – Food Ordering System
-
-![C#](https://img.shields.io/badge/-C%23-000d1a?style=flat-square&logo=dotnet&logoColor=00F5FF)
-![WinForms](https://img.shields.io/badge/-Windows_Forms-000d1a?style=flat-square&logoColor=00F5FF)
-
-- 5 user roles: Admin, Manager, Owner, Customer, Guest
-- Order management, profit tracking, theming, secure login
-
-</td>
-<td width="50%">
-
-### 📚 Library Management System
-
-![ASP.NET](https://img.shields.io/badge/-ASP.NET_MVC-000d1a?style=flat-square&logo=dotnet&logoColor=00F5FF)
-![MySQL](https://img.shields.io/badge/-MySQL-000d1a?style=flat-square&logo=mysql&logoColor=00F5FF)
-
-- Email alerts for unavailability and late returns
-- Secure password recovery via email verification
-- Full admin inventory management + API integration
-
-</td>
-</tr>
-</table>
-
----
-
 ## 💼 Experience
 
 ```
@@ -331,7 +246,7 @@ print(me.list_current_focus())
 
 <p align="center">
  <img alt="snake eating my contributions" src="https://raw.githubusercontent.com/checkiamsiam/checkiamsiam/output/github-contribution-grid-snake.svg" />
- 
+
 </p>
 ---
 
