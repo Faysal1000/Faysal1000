@@ -147,11 +147,11 @@ print(me.list_current_focus())
 
 <br/>
 
-| #   | Title                                                                                                                                   | Link    |
-| --- | --------------------------------------------------------------------------------------------------------------------------------------- | --------- |
-| 1   | **BTdiagAI:** BTdiagAI: A Web-Deployed Hybrid Framework for Brain Tumor Classification Using Optimized MRI Preprocessing and Deep Learning Fusion | ![Link](https://ietresearch.onlinelibrary.wiley.com/doi/full/10.1049/htl2.70053) |
-| 2   | Arduino-Controlled Multi-Function Robot with Bluetooth and nRF24L01+ Communication                                                      | ![Link](https://pubs2.ascee.org/index.php/IJRCS/article/view/1517) |
-| 3   | **ParkinNet:** A Novel Approach to Classifying Alzheimer's and Parkinson's Diseases Using Brain Structural MRI                          | ![Link](https://revistas.usal.es/cinco/index.php/2255-2863/article/view/32178) |
+| # | Research Work | 🔗 |
+|---|--------------|----|
+| 1 | **BTdiagAI** – Brain Tumor Classification with MRI + Deep Learning Fusion | [Read](https://ietresearch.onlinelibrary.wiley.com/doi/full/10.1049/htl2.70053) |
+| 2 | Arduino-Controlled Multi-Function Robot (Bluetooth + nRF24L01+) | [Read](https://pubs2.ascee.org/index.php/IJRCS/article/view/1517) |
+| 3 | **ParkinNet** – Alzheimer's & Parkinson's MRI Classification | [Read](https://revistas.usal.es/cinco/index.php/2255-2863/article/view/32178) |
 
 </details>
 
