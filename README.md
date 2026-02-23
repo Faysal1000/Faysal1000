@@ -240,7 +240,7 @@ print(me.list_current_focus())
 
 <div align="center">
 
-[![GitHub Streak](https://streak-stats.demolab.com?user=YOUR_GITHUB_USERNAME&theme=dark&background=000d1a&ring=00F5FF&fire=00D4FF&currStreakLabel=00F5FF&border=003355&sideLabels=99c9e8)](https://git.io/streak-stats)
+[![GitHub Streak](https://streak-stats.demolab.com?user=Faysal1000&theme=dark&background=000d1a&ring=00F5FF&fire=00D4FF&currStreakLabel=00F5FF&border=003355&sideLabels=99c9e8)](https://git.io/streak-stats)
 
 </div>
 
