@@ -2,8 +2,6 @@
 
 ![banner](./banner.svg)
 
-<!-- Typing animation -->
-
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=800&color=00F5FF&center=true&vCenter=true&multiline=false&width=700&lines=Hey+there!+I'm+Faysal+Ahmmed+%F0%9F%91%8B;ML+Researcher+%7C+Software+Engineer;Medical+AI+%7C+Computer+Vision+%7C+Robotics;Building+AI+that+solves+real-world+problems)](https://git.io/typing-svg)
 
 <br/>
@@ -22,138 +20,35 @@
 class FaysalAhmmed:
 
     def __init__(self):
-        # === Identity ===
-        self.name = "Faysal Ahmmed"
-        self.location = "Dhaka, Bangladesh"
-        self.degree = "BSc in CSE — American International University-Bangladesh"
-        self.cgpa = "3.99 / 4.00"
-        self.roles = ["Backend Developer","Machine Learning Researcher", "Software Engineer", "Robotics Enthusiast"]
-
-        # === Academic Highlights ===
-        self.awards = [
-            "Dean's List ×8",
-            "80% Academic Scholarship",
-            "Best Thesis in AI",
-        ]
+        self.name       = "Faysal Ahmmed"
+        self.location   = "Dhaka, Bangladesh"
+        self.degree     = "BSc in CSE — American International University-Bangladesh"
+        self.roles      = ["ML Researcher", "Backend Developer", "Software Engineer"]
 
         self.research_focus = [
             "Medical Imaging & AI",
             "Explainable AI (SHAP, Grad-CAM)",
             "Computer Vision",
-            "Segmentation → Classification Pipelines",
-            "Edge AI & Embedded Inference"
+            "Edge AI & Embedded Inference",
         ]
 
-        # === Technical Stack ===
         self.skills = {
-            "Languages": [
-                "Python", "C++", "C#", "Java", "R",
-                "PHP", "JavaScript", "TypeScript",
-                "Bash", "Assembly"
-            ],
-            "AI / ML": [
-                "TensorFlow", "PyTorch", "Scikit-Learn",
-                "OpenCV", "VLM", "XGBoost", "LightGBM",
-                "CNN Architectures (Xception, EfficientNet, ConvNeXt)"
-            ],
-            "Backend": [
-                "Node.js", "NestJS", "REST APIs", 
-                "JWT Auth", "LLM Automation",
-                "Queue Systems (BullMQ)"
-            ],
-            "Frontend": [
-                "React.js", "Bootstrap", "JQuery"
-            ],
-            "Database": [
-                "MySQL", "PostgreSQL", "MongoDB", "Redis"
-            ],
-            "DevOps & Cloud": [
-                "Docker", "GitHub Actions", "AWS"
-            ],
-            "Embedded & IoT": [
-                "Raspberry Pi",
-                "Arduino",
-                "ESP32-CAM"
-            ]
+            "Languages" : ["Python", "C++", "C#", "Java", "JavaScript", "TypeScript", "R", "PHP", "Bash"],
+            "AI / ML"   : ["TensorFlow", "PyTorch", "Scikit-Learn", "OpenCV", "XGBoost", "LightGBM"],
+            "Backend"   : ["Node.js", "NestJS", "REST APIs", "JWT Auth", "BullMQ", "LLM Automation"],
+            "Frontend"  : ["React.js", "Tailwind CSS", "Bootstrap"],
+            "Database"  : ["MySQL", "PostgreSQL", "MongoDB", "Redis"],
+            "DevOps"    : ["Docker", "GitHub Actions", "AWS"],
+            "Embedded"  : ["Raspberry Pi", "Arduino", "ESP32-CAM"],
         }
 
-        # === Major Projects ===
-        self.projects = [
-            "Skin Cancer Classification with Hair Removal & Multi-Skin Tone Handling",
-            "MRI Brain Tumor Classification (Hybrid ML + Deep Learning)",
-            "XceptionKNN: Hybrid WBC Classification Model",
-            "Automated Home System (Raspberry Pi + Wireless Relays + Voice Control)",
-            "Lead Management System with Semantic Search & Agentic AI"
-        ]
-
-        # === Current Focus ===
-        self.current_work = [
-            "Backend Development with LLM Automation",
-            "Agentic AI Systems",
-            "Explainable AI Integration",
-            "Embedding-based Semantic Search",
-            "Optimizing ML pipelines for CPU-only environments",
-        ]
-
-        # === Vision ===
         self.ambition = (
-            "To become a globally impactful AI engineer and researcher, "
-            "building intelligent systems that solve real-world problems "
+            "To build intelligent systems that solve real-world problems "
             "across healthcare, automation, and smart infrastructure."
         )
 
-        self.fun_fact = "not loving but laughing 😄"
-
-    def introduce(self):
-        return (
-            f"{self.name} is a {', '.join(self.roles)} based in {self.location}.\n"
-            f"Currently pursuing {self.degree} with a CGPA of {self.cgpa}.\n"
-            f"Focused on {', '.join(self.research_focus[:3])}.\n"
-            f"Ambition: {self.ambition}"
-        )
-
-    def list_skills(self):
-        output = "\n=== Technical Skills ===\n"
-        for category, items in self.skills.items():
-            output += f"\n{category}: {', '.join(items)}"
-        return output
-
-    def list_projects(self):
-        return "\n=== Major Projects ===\n" + "\n- ".join([""] + self.projects)
-
-    def list_current_focus(self):
-        return "\n=== Current Focus ===\n" + "\n- ".join([""] + self.current_work)
-
-    def achievements(self):
-        return "\n=== Achievements ===\n" + "\n- ".join([""] + self.awards)
-
-
-# Instantiate
 me = FaysalAhmmed()
-
-print(me.introduce())
-print(me.achievements())
-print(me.list_skills())
-print(me.list_projects())
-print(me.list_current_focus())
 ```
-
----
-
-## 🔬 Research & Publications
-
-<details>
-<summary><b>📄 Click to expand Publications</b></summary>
-
-<br/>
-
-| # | Research Work | 🔗 |
-|---|--------------|----|
-| 1 | **BTdiagAI** – Brain Tumor Classification with MRI + Deep Learning Fusion | [Read](https://ietresearch.onlinelibrary.wiley.com/doi/full/10.1049/htl2.70053) |
-| 2 | Arduino-Controlled Multi-Function Robot (Bluetooth + nRF24L01+) | [Read](https://pubs2.ascee.org/index.php/IJRCS/article/view/1517) |
-| 3 | **ParkinNet** – Alzheimer's & Parkinson's MRI Classification | [Read](https://revistas.usal.es/cinco/index.php/2255-2863/article/view/32178) |
-
-</details>
 
 ---
 
@@ -192,9 +87,7 @@ print(me.list_current_focus())
 ![Google Colab](https://img.shields.io/badge/Google_Colab-000d1a?style=flat-square&logo=googlecolab&logoColor=00F5FF)
 ![LaTeX](https://img.shields.io/badge/LaTeX-000d1a?style=flat-square&logo=latex&logoColor=00F5FF)
 ![MySQL](https://img.shields.io/badge/MySQL-000d1a?style=flat-square&logo=mysql&logoColor=00F5FF)
-![SQL Server](https://img.shields.io/badge/SQL_Server-000d1a?style=flat-square&logo=microsoftsqlserver&logoColor=00F5FF)
 ![Linux](https://img.shields.io/badge/Linux-000d1a?style=flat-square&logo=linux&logoColor=00F5FF)
-![AutoCAD](https://img.shields.io/badge/AutoCAD-000d1a?style=flat-square&logo=autodesk&logoColor=00F5FF)
 ![Postman](https://img.shields.io/badge/Postman-000d1a?style=flat-square&logo=postman&logoColor=00F5FF)
 
 </div>
@@ -228,7 +121,6 @@ print(me.list_current_focus())
 
 | 🥇 Achievement                                  | 🏛️ Institution |
 | ----------------------------------------------- | -------------- |
-| 🎓 **80% Academic Scholarship** on tuition fees | AIUB           |
 | 🏅 **Dean's List Honors — 8 consecutive times** | AIUB           |
 | 🤖 **Best Thesis in AI** (Medical Sector)       | AIUB           |
 
@@ -245,9 +137,9 @@ print(me.list_current_focus())
 </div>
 
 <p align="center">
- <img alt="snake eating my contributions" src="https://raw.githubusercontent.com/checkiamsiam/checkiamsiam/output/github-contribution-grid-snake.svg" />
-
+  <img alt="snake eating my contributions" src="https://raw.githubusercontent.com/checkiamsiam/checkiamsiam/output/github-contribution-grid-snake.svg" />
 </p>
+
 ---
 
 ## 🎯 Current Interests
