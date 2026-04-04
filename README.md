@@ -6,7 +6,7 @@
 
 <br/>
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-000d1a?style=for-the-badge&logo=vercel&logoColor=00F5FF)](https://faysalahmmed-portfolio.vercel.app)
+[![Portfolio](https://img.shields.io/badge/Portfolio-000d1a?style=for-the-badge&logo=vercel&logoColor=00F5FF)](https://faysalahmmed.vercel.app)
 [![Email](https://img.shields.io/badge/Gmail-000d1a?style=for-the-badge&logo=gmail&logoColor=00F5FF)](mailto:faysalahmmed4200@gmail.com)
 [![Location](https://img.shields.io/badge/Dhaka%2C_Bangladesh-000d1a?style=for-the-badge&logo=googlemaps&logoColor=00F5FF)](#)
 
