@@ -273,7 +273,7 @@
 
   <!-- Pill 3 — Research Focus -->
   <rect x="392" y="162" width="162" height="28" rx="14" fill="url(#pill3Grad)" stroke="#00d4ff" stroke-width="1" opacity="0.85" filter="url(#pillglow)"/>
-  <text x="402" y="181" font-family="'Courier New', monospace" font-size="10.5" fill="#00d4ff" opacity="1" letter-spacing="0.3">🧬 Researcher &amp; Backend Engineer</text>
+  <text x="402" y="181" font-family="'Courier New', monospace" font-size="10.5" fill="#00d4ff" opacity="1" letter-spacing="0.3">🧬 Backend Engineer</text>
 
   <!-- ═══ BOTTOM ACCENT LINE ═══ -->
   <line x1="80" y1="210" x2="570" y2="210" stroke="#00f5ff" stroke-width="0.8" opacity="0.25">
