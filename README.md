@@ -2,28 +2,28 @@
 
 <!-- NEOFETCH:START -->
 ```
-                                                faysalahmmed
-                                                ──────────────────────────────────────────────
-                                                OS:                Human
-                                                Uptime:            25 years, 3 months, 20 days
-                                                Host:              Dhaka, Bangladesh
-                                                Kernel:            Computer Scientist
-                                                                   (AI • Robotics • ML)
+                         /~\                    faysalahmmed
+                        |o o)  Hi there!        ──────────────────────────────────────────────
+                        _\=/_                   OS:                Human
+        ___        #   /  _  \   #              Uptime:            25 years, 3 months, 20 days
+       /() \        \//|/.\|\//               Host:              Dhaka, Bangladesh
+     _|_____|_       \/  \_/  \/                Kernel:            Computer Scientist
+    | | === | |         |\ /|                                      (AI • Robotics • ML)
+    |_|  O  |_|         \_ _/                   
+     ||  O  ||          | | |                   Languages.Prog:    Python, C++, TypeScript,
+     ||__*__||          | | |                                      C#, MATLAB
+    |~ \___/ ~|         []|[]                   Languages.Real:    English, Bengali
+    /=\ /=\ /=\         | | |                   
+  __[_]_[_]_[_]________/_]_[_\__________        Frameworks.ML:     PyTorch, TensorFlow, OpenCV,
+                                                                   Scikit-Learn
+                                                Frameworks.Back:   Node.js, NestJS, Docker, REST
+                                                Frameworks.Front:  React.js, Tailwind CSS
+                                                Database:          PostgreSQL, MySQL, Redis
                                                 
-                                                Languages.Prog:    Python, C++, TypeScript,
-                         /~\                                       C#, MATLAB
-                        |o o)  Hi there!        Languages.Real:    English, Bengali
-                        _\=/_                   
-        ___        #   /  _  \   #              Frameworks.ML:     PyTorch, TensorFlow, OpenCV,
-       /() \        \//|/.\|\//                                  Scikit-Learn
-     _|_____|_       \/  \_/  \/                Frameworks.Back:   Node.js, NestJS, Docker, REST
-    | | === | |         |\ /|                   Frameworks.Front:  React.js, Tailwind CSS
-    |_|  O  |_|         \_ _/                   Database:          PostgreSQL, MySQL, Redis
-     ||  O  ||          | | |                   
-     ||__*__||          | | |                   Research.AI:       Multimodal AI, Medical AI,
-    |~ \___/ ~|         []|[]                                      Computer Vision, Misinfo
-    /=\ /=\ /=\         | | |                   Research.Robotics: Humanoid Robotics, RL,
-  __[_]_[_]_[_]________/_]_[_\__________                           Medical Robotics, Motion
+                                                Research.AI:       Multimodal AI, Medical AI,
+                                                                   Computer Vision, Misinfo
+                                                Research.Robotics: Humanoid Robotics, RL,
+                                                                   Medical Robotics, Motion
                                                                    Retargeting
                                                 
                                                 Education:         BSc in CSE (2026)
