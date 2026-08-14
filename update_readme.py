@@ -41,8 +41,8 @@ def read_ascii_art() -> list[str]:
     with open(ASCII_ART_PATH, "r", encoding="utf-8") as f:
         lines = f.readlines()
 
-    # Strip newlines, remove only trailing empty lines
-    lines = [line.rstrip("\n") for line in lines]
+    # Strip all trailing whitespace (spaces + newlines) to get true widths
+    lines = [line.rstrip() for line in lines]
     while lines and not lines[-1].strip():
         lines.pop()
 
@@ -184,64 +184,99 @@ def get_github_stats() -> dict:
 # INFO — Edit these lines to change what shows in your neofetch
 # ══════════════════════════════════════════════════════════════════════════
 
-def build_info_lines(stats: dict, uptime: str) -> list[str]:
-    """Build the right-side info panel formatted cleanly to prevent line wrapping."""
-    loc_total = stats['additions'] + stats['deletions']
-    loc_str = f"{loc_total:,} (+{stats['additions']:,}, -{stats['deletions']:,})" if loc_total > 0 else "0 (+0, -0)"
+MAX_WIDTH = 80  # GitHub code block safe width
 
-    return [
+
+def build_info_lines(stats: dict, uptime: str) -> list[str]:
+    """Build the right-side info panel. Auto-sizes separators."""
+    # Format LOC compactly for large numbers
+    loc_total = stats['additions'] + stats['deletions']
+    if loc_total >= 1_000_000:
+        loc_str = (f"{loc_total / 1e6:.1f}M "
+                   f"(+{stats['additions'] / 1e6:.1f}M, "
+                   f"-{stats['deletions'] / 1e6:.1f}M)")
+    elif loc_total >= 1_000:
+        loc_str = (f"{loc_total / 1e3:.0f}K "
+                   f"(+{stats['additions'] / 1e3:.0f}K, "
+                   f"-{stats['deletions'] / 1e3:.0f}K)")
+    elif loc_total > 0:
+        loc_str = f"{loc_total:,} (+{stats['additions']:,}, -{stats['deletions']:,})"
+    else:
+        loc_str = "0 (+0, -0)"
+
+    # Key width: 23 chars for full dot-notation keys
+    K = 23
+
+    lines = [
         "faysalahmmed",
-        "──────────────────────────────────────────────",
-        "OS:                Human",
-        f"Uptime:            {uptime}",
-        "Host:              Dhaka, Bangladesh",
-        "Kernel:            Computer Scientist",
-        "                   (AI • Robotics • ML)",
+        "",  # separator placeholder (index 1)
+        f"{'OS:':<{K}}Human",
+        f"{'Uptime:':<{K}}{uptime}",
+        f"{'Host:':<{K}}Dhaka, Bangladesh",
+        f"{'Kernel:':<{K}}Computer Scientist",
+        f"{'':<{K}}(AI • Robotics • ML)",
         "",
-        "Languages.Prog:    Python, C++, TypeScript,",
-        "                   C#, MATLAB",
-        "Languages.Real:    English, Bengali",
+        f"{'Languages.Programming:':<{K}}Python, C++, TypeScript,",
+        f"{'':<{K}}C#, MATLAB",
+        f"{'Languages.Real:':<{K}}English, Bengali",
         "",
-        "Frameworks.ML:     PyTorch, TensorFlow, OpenCV,",
-        "                   Scikit-Learn",
-        "Frameworks.Back:   Node.js, NestJS, Docker, REST",
-        "Frameworks.Front:  React.js, Tailwind CSS",
-        "Database:          PostgreSQL, MySQL, Redis",
+        f"{'Frameworks.ML:':<{K}}PyTorch, TensorFlow,",
+        f"{'':<{K}}OpenCV, Scikit-Learn",
+        f"{'Frameworks.Backend:':<{K}}Node.js, NestJS, Docker",
+        f"{'Frameworks.Frontend:':<{K}}React.js, Tailwind CSS",
+        f"{'Database:':<{K}}PostgreSQL, MySQL, Redis",
         "",
-        "Research.AI:       Multimodal AI, Medical AI,",
-        "                   Computer Vision, Misinfo",
-        "Research.Robotics: Humanoid Robotics, RL,",
-        "                   Medical Robotics, Motion",
-        "                   Retargeting",
+        f"{'Research.AI:':<{K}}Multimodal AI, Medical AI,",
+        f"{'':<{K}}Computer Vision, Misinfo",
+        f"{'Research.Robotics:':<{K}}Humanoid, RL, Medical",
+        f"{'':<{K}}Robotics, Motion RT",
         "",
-        "Education:         BSc in CSE (2026)",
-        "                   AIUB, Bangladesh",
+        f"{'Education:':<{K}}BSc CSE (2026), AIUB",
         "",
-        "Contact ──────────────────────────────────────",
-        "Portfolio:         faysalahmmed.vercel.app",
-        "Email:             faysalahmmed4200@gmail.com",
-        "ORCID:             0009-0002-2981-1600",
-        "Facebook:          facebook.com/faysal.ahmmed.2001",
+        "",  # contact separator placeholder (index 25)
+        f"{'Portfolio:':<{K}}faysalahmmed.vercel.app",
+        f"{'Email:':<{K}}faysalahmmed4200@gmail.com",
+        f"{'ORCID:':<{K}}0009-0002-2981-1600",
+        f"{'Facebook:':<{K}}faysal.ahmmed.2001",
         "",
-        "Research Stats ───────────────────────────────",
-        f"Repos:             {stats['repos']}",
-        f"Commits:           {stats['commits']:,}",
-        f"GitHub LOC:        {loc_str}",
-        "Research Years:    2+",
-        "Publications:      9 (Q1/Q2: 5, 1st Author: 5)",
-        "Research Areas:    AI • Robotics • Vision",
+        "",  # stats separator placeholder (index 31)
+        f"{'Repos:':<{K}}{stats['repos']}",
+        f"{'Commits:':<{K}}{stats['commits']:,}",
+        f"{'LOC:':<{K}}{loc_str}",
+        f"{'Research Years:':<{K}}2+",
+        f"{'Publications:':<{K}}9 (Q1/Q2: 5, 1st: 5)",
+        f"{'Research Areas:':<{K}}AI • Robotics • Vision",
         "",
-        "──────────────────────────────────────────────",
-        "Status:            Applying for MS/PhD by",
-        "                   Research in Robotics 🤖",
+        "",  # bottom separator placeholder (index 39)
+        f"{'Status:':<{K}}Applying for MS/PhD",
+        f"{'':<{K}}in Robotics 🤖",
     ]
+
+    # Auto-size separator lines to match widest content line
+    max_info = max(len(line) for line in lines)
+    sep = "─" * max_info
+    lines[1] = sep
+    lines[25] = f"Contact {'─' * (max_info - 8)}"
+    lines[31] = f"Stats {'─' * (max_info - 6)}"
+    lines[39] = sep
+
+
+
+    return lines
 
 
 def build_neofetch(ascii_lines: list[str], info_lines: list[str]) -> str:
     """Combine ASCII art (left) + info (right) side by side."""
 
-    # Find the widest ASCII line to set padding
-    art_width = max((len(line) for line in ascii_lines), default=0) + 2
+    # Use actual content width (no trailing spaces)
+    art_width = max((len(line) for line in ascii_lines), default=0)
+    info_width = max((len(line) for line in info_lines), default=0)
+    total_width = art_width + 2 + info_width
+
+    if total_width > MAX_WIDTH:
+        print(f"⚠️  Total width is {total_width} chars (max {MAX_WIDTH}).")
+        print(f"   Art: {art_width}, Info: {info_width}, Gap: 2")
+        print(f"   Tip: Shrink your ASCII art to ≤{MAX_WIDTH - 2 - info_width} chars wide.")
 
     combined = []
     max_lines = max(len(ascii_lines), len(info_lines))
@@ -249,7 +284,7 @@ def build_neofetch(ascii_lines: list[str], info_lines: list[str]) -> str:
     for i in range(max_lines):
         left = ascii_lines[i] if i < len(ascii_lines) else ""
         right = info_lines[i] if i < len(info_lines) else ""
-        combined.append(f"  {left:<{art_width}}  {right}")
+        combined.append(f"{left:<{art_width}}  {right}")
 
     return "\n".join(combined)
 
