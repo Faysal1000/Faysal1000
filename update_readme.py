@@ -112,8 +112,17 @@ def github_api(endpoint: str) -> dict | list:
 
 
 def get_github_stats() -> dict:
-    """Fetch GitHub profile stats including LOC."""
-    user = github_api(f"/users/{GITHUB_USERNAME}")
+    """Fetch GitHub profile stats including LOC, public & private repos."""
+    load_env()
+    token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+    user = {}
+    if token:
+        auth_user = github_api("/user")
+        if isinstance(auth_user, dict) and auth_user.get("login", "").lower() == GITHUB_USERNAME.lower():
+            user = auth_user
+
+    if not user:
+        user = github_api(f"/users/{GITHUB_USERNAME}")
 
     repos = []
     page = 1
@@ -128,8 +137,10 @@ def get_github_stats() -> dict:
 
     total_stars = sum(r.get("stargazers_count", 0) for r in repos)
     public_repos = user.get("public_repos", len(repos)) if isinstance(user, dict) else len(repos)
+    private_repos = (user.get("total_private_repos", 0) or user.get("owned_private_repos", 0)) if isinstance(user, dict) else 0
     followers = user.get("followers", 0) if isinstance(user, dict) else 0
     following = user.get("following", 0) if isinstance(user, dict) else 0
+    total_repos = public_repos + private_repos
 
     # Fetch commits count and LOC (lines added/deleted)
     total_commits = 0
@@ -155,7 +166,9 @@ def get_github_stats() -> dict:
                         total_deletions += week.get("d", 0)
 
     stats = {
-        "repos": public_repos,
+        "repos": total_repos,
+        "public_repos": public_repos,
+        "private_repos": private_repos,
         "stars": total_stars,
         "followers": followers,
         "following": following,
@@ -168,11 +181,11 @@ def get_github_stats() -> dict:
     if public_repos == 0 and total_commits == 0 and os.path.exists(README_PATH):
         with open(README_PATH, "r", encoding="utf-8") as f:
             old_text = f.read()
-        repos_m = re.search(r"Repos:\s*([\d,]+)", old_text)
+        repos_m = re.search(r"Repos:\s*([^\n]+)", old_text)
         commits_m = re.search(r"Commits:\s*([\d,]+)", old_text)
         loc_m = re.search(r"(?:GitHub\s+)?LOC:\s*[^(]+\(\s*\+([\d,]+),\s*\-([\d,]+)\s*\)", old_text)
-        if repos_m and int(repos_m.group(1).replace(",", "")) > 0:
-            stats["repos"] = int(repos_m.group(1).replace(",", ""))
+        if repos_m:
+            stats["repos_str"] = repos_m.group(1).strip()
         if commits_m and int(commits_m.group(1).replace(",", "")) > 0:
             stats["commits"] = int(commits_m.group(1).replace(",", ""))
         if loc_m:
@@ -202,6 +215,15 @@ def build_info_lines(stats: dict, uptime: str) -> list[str]:
         loc_str = f"{loc_total:,} {raw_breakdown}"
     else:
         loc_str = "0 (+0, -0)"
+
+    # Format Repos: total (public, private)
+    if "repos_str" in stats:
+        repos_display = stats["repos_str"]
+    else:
+        tot_r = stats.get("repos", stats.get("public_repos", 0))
+        pub_r = stats.get("public_repos", tot_r)
+        priv_r = stats.get("private_repos", 0)
+        repos_display = f"{tot_r} ({pub_r} public, {priv_r} private)"
 
     # Key width: 23 chars for full dot-notation keys
     K = 23
@@ -237,7 +259,7 @@ def build_info_lines(stats: dict, uptime: str) -> list[str]:
         f"{'Facebook:':<{K}}faysal.ahmmed.2001",
         "",
         "__STATS_SEP__",
-        f"{'Repos:':<{K}}{stats['repos']}",
+        f"{'Repos:':<{K}}{repos_display}",
         f"{'Commits:':<{K}}{stats['commits']:,}",
         f"{'LOC:':<{K}}{loc_str}",
         f"{'Research Years:':<{K}}2+",
