@@ -1,6 +1,6 @@
 <!-- NEOFETCH:START -->
-                    ```
-                                                Faysal Ahmmed
+```
+                            Faysal Ahmmed
                             ──────────────────────────────────────────────────────────────────────────
                             OS:                    Human
                             Uptime:                25 years, 3 months, 20 days
@@ -31,7 +31,7 @@ ________/_]_[_\___________  Research.Robotics:     Humanoid Robotics, Reinforcem
                             
                             Stats ────────────────────────────────────────────────────────────────────
                             Repos:                 16 (12 public, 4 private)
-                            Commits.All:           634
+                            Commits.All:           635
                             LOC:                   10.2M (+9,585,366, -653,659)
                             Research Years:        2+
                             Publications:          9
@@ -39,6 +39,6 @@ ________/_]_[_\___________  Research.Robotics:     Humanoid Robotics, Reinforcem
                             
                             ──────────────────────────────────────────────────────────────────────────
                             Status:                Applying for MS/PhD by Research in Robotics 🤖
-                    ```
-                    <!-- NEOFETCH:END -->
+```
+<!-- NEOFETCH:END -->
 

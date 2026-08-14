@@ -394,10 +394,10 @@ def update_readme(neofetch_block: str):
     )
 
     replacement = f"""{start_marker}
-                    ```
-                    {neofetch_block}
-                    ```
-                    {end_marker}"""
+```
+{neofetch_block}
+```
+{end_marker}"""
 
     if start_marker in content:
         new_content = pattern.sub(replacement, content)
