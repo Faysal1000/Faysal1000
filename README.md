@@ -20,7 +20,7 @@
 ________/_]_[_\___________  Research.Robotics:     Humanoid Robotics, Reinforcement Learning,
                                                    Medical Robotics, Motion Retargeting
                             
-                            Education:             BSc in Computer Science & Engineering (2026)
+                            Education.Latest:      BSc in Computer Science & Engineering (2026)
                                                    American International University-Bangladesh (AIUB)
                             
                             Contact ──────────────────────────────────────────────────────────────────
@@ -32,9 +32,9 @@ ________/_]_[_\___________  Research.Robotics:     Humanoid Robotics, Reinforcem
                             Stats ────────────────────────────────────────────────────────────────────
                             Repos:                 12
                             Commits:               302
-                            LOC:                   10.2M (+9.6M, -0.7M)
+                            LOC:                   10.2M (+9,585,366, -653,659)
                             Research Years:        2+
-                            Publications:          9 (Q1/Q2: 5, 1st: 5)
+                            Publications:          9 
                             Research Areas:        AI • Robotics • Vision
                             
                             ──────────────────────────────────────────────────────────────────────────

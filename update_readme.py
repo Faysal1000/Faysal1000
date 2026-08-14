@@ -170,7 +170,7 @@ def get_github_stats() -> dict:
             old_text = f.read()
         repos_m = re.search(r"Repos:\s*([\d,]+)", old_text)
         commits_m = re.search(r"Commits:\s*([\d,]+)", old_text)
-        loc_m = re.search(r"GitHub LOC:\s*[\d,]+\s*\(\s*\+([\d,]+),\s*\-([\d,]+)\s*\)", old_text)
+        loc_m = re.search(r"(?:GitHub\s+)?LOC:\s*[^(]+\(\s*\+([\d,]+),\s*\-([\d,]+)\s*\)", old_text)
         if repos_m and int(repos_m.group(1).replace(",", "")) > 0:
             stats["repos"] = int(repos_m.group(1).replace(",", ""))
         if commits_m and int(commits_m.group(1).replace(",", "")) > 0:
@@ -191,18 +191,15 @@ MAX_WIDTH = 110  # GitHub safe width
 
 def build_info_lines(stats: dict, uptime: str) -> list[str]:
     """Build the right-side info panel. Auto-sizes separators."""
-    # Format LOC compactly for large numbers
+    # Format LOC: total in M/K/raw with full raw counts for (+add, -del)
     loc_total = stats['additions'] + stats['deletions']
+    raw_breakdown = f"(+{stats['additions']:,}, -{stats['deletions']:,})"
     if loc_total >= 1_000_000:
-        loc_str = (f"{loc_total / 1e6:.1f}M "
-                   f"(+{stats['additions'] / 1e6:.1f}M, "
-                   f"-{stats['deletions'] / 1e6:.1f}M)")
+        loc_str = f"{loc_total / 1e6:.1f}M {raw_breakdown}"
     elif loc_total >= 1_000:
-        loc_str = (f"{loc_total / 1e3:.0f}K "
-                   f"(+{stats['additions'] / 1e3:.0f}K, "
-                   f"-{stats['deletions'] / 1e3:.0f}K)")
+        loc_str = f"{loc_total / 1e3:.0f}K {raw_breakdown}"
     elif loc_total > 0:
-        loc_str = f"{loc_total:,} (+{stats['additions']:,}, -{stats['deletions']:,})"
+        loc_str = f"{loc_total:,} {raw_breakdown}"
     else:
         loc_str = "0 (+0, -0)"
 
@@ -230,7 +227,7 @@ def build_info_lines(stats: dict, uptime: str) -> list[str]:
         f"{'Research.Robotics:':<{K}}Humanoid Robotics, Reinforcement Learning,",
         f"{'':<{K}}Medical Robotics, Motion Retargeting",
         "",
-        f"{'Education:':<{K}}BSc in Computer Science & Engineering (2026)",
+        f"{'Education.Latest:':<{K}}BSc in Computer Science & Engineering (2026)",
         f"{'':<{K}}American International University-Bangladesh (AIUB)",
         "",
         "__CONTACT_SEP__",
@@ -244,7 +241,7 @@ def build_info_lines(stats: dict, uptime: str) -> list[str]:
         f"{'Commits:':<{K}}{stats['commits']:,}",
         f"{'LOC:':<{K}}{loc_str}",
         f"{'Research Years:':<{K}}2+",
-        f"{'Publications:':<{K}}9 (Q1/Q2: 5, 1st: 5)",
+        f"{'Publications:':<{K}}9",
         f"{'Research Areas:':<{K}}AI • Robotics • Vision",
         "",
         "__BOTTOM_SEP__",
