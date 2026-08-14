@@ -31,9 +31,9 @@
                                                 Facebook:                 facebook.com/faysal.ahmmed.2001
                                                 
                                                 ────────────────────── Research Stats ──────────────────────────
-                                                Repos:                    0
-                                                Commits:                  0
-                                                GitHub LOC:               0 ( +0, -0 )
+                                                Repos:                    12
+                                                Commits:                  302
+                                                GitHub LOC:               10,239,025 ( +9,585,366, -653,659 )
                                                 Research Years:            2+
                                                 Publications:              9
                                                 Q1 + Q2 Papers:            5
