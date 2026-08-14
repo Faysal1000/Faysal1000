@@ -177,6 +177,18 @@ def get_github_stats() -> dict:
         "deletions": total_deletions,
     }
 
+    # If private_repos is 0 (e.g. running in GitHub Actions with default GITHUB_TOKEN which cannot see private repos),
+    # preserve previous private_repos count from existing README if available
+    if private_repos == 0 and os.path.exists(README_PATH):
+        with open(README_PATH, "r", encoding="utf-8") as f:
+            old_text = f.read()
+        priv_m = re.search(r"Repos:\s*\d+\s*\(\s*\d+\s*public,\s*(\d+)\s*private\s*\)", old_text)
+        if priv_m:
+            private_repos = int(priv_m.group(1))
+            total_repos = public_repos + private_repos
+            stats["private_repos"] = private_repos
+            stats["repos"] = total_repos
+
     # If rate limited (e.g. public_repos == 0 and commits == 0), try to keep old values from README.md
     if public_repos == 0 and total_commits == 0 and os.path.exists(README_PATH):
         with open(README_PATH, "r", encoding="utf-8") as f:
