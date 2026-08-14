@@ -35,7 +35,7 @@ ________/_]_[_\___________
                             
                             Stats ────────────────────────────────────────────
                             Repos:                 12
-                            Commits:               310
+                            Commits:               302
                             LOC:                   10.2M (+9.6M, -0.7M)
                             Research Years:        2+
                             Publications:          9 (Q1/Q2: 5, 1st: 5)
