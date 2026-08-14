@@ -34,7 +34,7 @@ ________/_]_[_\___________  Research.Robotics:     Humanoid Robotics, Reinforcem
                             Commits:               302
                             LOC:                   10.2M (+9,585,366, -653,659)
                             Research Years:        2+
-                            Publications:          9 
+                            Publications:          9
                             Research Areas:        AI • Robotics • Vision
                             
                             ──────────────────────────────────────────────────────────────────────────
