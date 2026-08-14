@@ -2,46 +2,50 @@
 
 <!-- NEOFETCH:START -->
 ```
-                                                ─────────────────────── faysalahmmed ──────────────────────────
-                                                OS:                       Human
-                                                Uptime:                  25 years, 3 months, 20 days
-                                                Host:                     Dhaka, Bangladesh
-                                                Kernel:                   Computer Scientist (AI • Robotics • ML)
+                                                faysalahmmed
+                                                ──────────────────────────────────────────────
+                                                OS:                Human
+                                                Uptime:            25 years, 3 months, 20 days
+                                                Host:              Dhaka, Bangladesh
+                                                Kernel:            Computer Scientist
+                                                                   (AI • Robotics • ML)
                                                 
-                                                Languages.Programming:    Python, C++, TypeScript, C#, MATLAB
-                                                Languages.Real:           English, Bengali
+                                                Languages.Prog:    Python, C++, TypeScript,
+                         /~\                                       C#, MATLAB
+                        |o o)  Hi there!        Languages.Real:    English, Bengali
+                        _\=/_                   
+        ___        #   /  _  \   #              Frameworks.ML:     PyTorch, TensorFlow, OpenCV,
+       /() \        \//|/.\|\//                                  Scikit-Learn
+     _|_____|_       \/  \_/  \/                Frameworks.Back:   Node.js, NestJS, Docker, REST
+    | | === | |         |\ /|                   Frameworks.Front:  React.js, Tailwind CSS
+    |_|  O  |_|         \_ _/                   Database:          PostgreSQL, MySQL, Redis
+     ||  O  ||          | | |                   
+     ||__*__||          | | |                   Research.AI:       Multimodal AI, Medical AI,
+    |~ \___/ ~|         []|[]                                      Computer Vision, Misinfo
+    /=\ /=\ /=\         | | |                   Research.Robotics: Humanoid Robotics, RL,
+  __[_]_[_]_[_]________/_]_[_\__________                           Medical Robotics, Motion
+                                                                   Retargeting
                                                 
-                         /~\                    Frameworks.ML:            TensorFlow, PyTorch, OpenCV, Scikit-Learn
-                        |o o)  Hi there!        Frameworks.Backend:       Node.js, NestJS, REST APIs, Docker
-                        _\=/_                   Frameworks.Frontend:      React.js, Tailwind CSS
-        ___        #   /  _  \   #              Database:                 PostgreSQL, MySQL, Redis
-       /() \        \//|/.\|\//               
-     _|_____|_       \/  \_/  \/                Research.AI:              Multimodal AI, Computer Vision,
-    | | === | |         |\ /|                                             Medical AI, Misinformation Detection
-    |_|  O  |_|         \_ _/                   Research.Robotics:        Humanoid Robotics, Reinforcement Learning,
-     ||  O  ||          | | |                                             Medical Robotics, Motion Retargeting,
-     ||__*__||          | | |                   
-    |~ \___/ ~|         []|[]                   Education.Latest:         BSc in CSE (2026)
-    /=\ /=\ /=\         | | |                                             American International University-Bangladesh
-  __[_]_[_]_[_]________/_]_[_\__________        
-                                                ──────────────────────── Contact ───────────────────────────────
-                                                Portfolio:                faysalahmmed.vercel.app
-                                                Email:                    faysalahmmed4200@gmail.com
-                                                ORCID:                    0009-0002-2981-1600
-                                                Facebook:                 facebook.com/faysal.ahmmed.2001
+                                                Education:         BSc in CSE (2026)
+                                                                   AIUB, Bangladesh
                                                 
-                                                ────────────────────── Research Stats ──────────────────────────
-                                                Repos:                    12
-                                                Commits:                  302
-                                                GitHub LOC:               10,239,025 ( +9,585,366, -653,659 )
-                                                Research Years:            2+
-                                                Publications:              9
-                                                Q1 + Q2 Papers:            5
-                                                First-Author Papers:       5
-                                                Research Areas:            AI • Robotics • Computer Vision
+                                                Contact ──────────────────────────────────────
+                                                Portfolio:         faysalahmmed.vercel.app
+                                                Email:             faysalahmmed4200@gmail.com
+                                                ORCID:             0009-0002-2981-1600
+                                                Facebook:          facebook.com/faysal.ahmmed.2001
                                                 
-                                                ────────────────────────────────────────────────────────────────
-                                                Status:                    Applying for MS/PhD by Research in Robotics 🤖
+                                                Research Stats ───────────────────────────────
+                                                Repos:             12
+                                                Commits:           302
+                                                GitHub LOC:        10,239,025 (+9,585,366, -653,659)
+                                                Research Years:    2+
+                                                Publications:      9 (Q1/Q2: 5, 1st Author: 5)
+                                                Research Areas:    AI • Robotics • Vision
+                                                
+                                                ──────────────────────────────────────────────
+                                                Status:            Applying for MS/PhD by
+                                                                   Research in Robotics 🤖
 ```
 <!-- NEOFETCH:END -->
 
