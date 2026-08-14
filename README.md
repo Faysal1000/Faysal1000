@@ -1,5 +1,3 @@
-<div align="center">
-
 <!-- NEOFETCH:START -->
 ```
                             faysalahmmed
@@ -47,6 +45,3 @@ ________/_]_[_\___________
 ```
 <!-- NEOFETCH:END -->
 
-
-
-</div>
