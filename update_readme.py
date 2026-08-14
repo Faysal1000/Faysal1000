@@ -13,6 +13,8 @@ HOW TO UPDATE:
   3. To change personal info, edit the INFO section below
 """
 
+from __future__ import annotations
+
 import os
 import re
 import json

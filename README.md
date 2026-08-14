@@ -9,7 +9,7 @@
          |o o)  Hi there!                          (AI • Robotics • ML)
          _\=/_              
     #   /  _  \   #         Languages.Programming: Python, C++, TypeScript,
-     \//|/.\|\//                                   C#, MATLAB
+      \//|/.\|\//                                  C#, MATLAB
       \/  \_/  \/           Languages.Real:        English, Bengali
          |\ /|              
          \_ _/              Frameworks.ML:         PyTorch, TensorFlow,
