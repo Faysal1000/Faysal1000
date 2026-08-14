@@ -111,6 +111,31 @@ def github_api(endpoint: str) -> dict | list:
         return {}
 
 
+def github_graphql(query: str, variables: dict | None = None) -> dict:
+    """Make a GitHub GraphQL API request."""
+    load_env()
+    token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+    if not token:
+        return {}
+
+    url = "https://api.github.com/graphql"
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "User-Agent": GITHUB_USERNAME,
+        "Content-Type": "application/json",
+    }
+    payload: dict = {"query": query}
+    if variables:
+        payload["variables"] = variables
+
+    req = urllib.request.Request(url, data=json.dumps(payload).encode("utf-8"), headers=headers)
+    try:
+        with urllib.request.urlopen(req) as resp:
+            return json.loads(resp.read().decode("utf-8"))
+    except Exception:
+        return {}
+
+
 def get_github_stats() -> dict:
     """Fetch GitHub profile stats including LOC, public & private repos."""
     load_env()
@@ -142,7 +167,7 @@ def get_github_stats() -> dict:
     following = user.get("following", 0) if isinstance(user, dict) else 0
     total_repos = public_repos + private_repos
 
-    # Fetch commits count and LOC (lines added/deleted)
+    # Fetch contributor stats for LOC (lines added/deleted)
     total_commits = 0
     total_additions = 0
     total_deletions = 0
@@ -165,6 +190,34 @@ def get_github_stats() -> dict:
                         total_additions += week.get("a", 0)
                         total_deletions += week.get("d", 0)
 
+    # Fetch accurate lifetime commits across all years via GraphQL API
+    lifetime_commits = 0
+    if token:
+        years_data = github_graphql(f'{{ user(login: "{GITHUB_USERNAME}") {{ contributionsCollection {{ contributionYears }} }} }}')
+        if isinstance(years_data, dict) and "data" in years_data and years_data["data"].get("user"):
+            years = years_data["data"]["user"]["contributionsCollection"].get("contributionYears", [])
+            for yr in years:
+                q = f'''
+                {{
+                  user(login: "{GITHUB_USERNAME}") {{
+                    contributionsCollection(from: "{yr}-01-01T00:00:00Z", to: "{yr}-12-31T23:59:59Z") {{
+                      totalCommitContributions
+                      restrictedContributionsCount
+                    }}
+                  }}
+                }}
+                '''
+                yr_res = github_graphql(q)
+                if isinstance(yr_res, dict) and "data" in yr_res and yr_res["data"].get("user"):
+                    cc = yr_res["data"]["user"]["contributionsCollection"]
+                    lifetime_commits += cc.get("totalCommitContributions", 0) + cc.get("restrictedContributionsCount", 0)
+
+    # Fallback to Search API or Repo total if GraphQL wasn't available
+    if lifetime_commits == 0:
+        search_commits = github_api(f"/search/commits?q=author:{GITHUB_USERNAME}")
+        if isinstance(search_commits, dict) and "total_count" in search_commits:
+            lifetime_commits = search_commits["total_count"]
+
     stats = {
         "repos": total_repos,
         "public_repos": public_repos,
@@ -172,7 +225,7 @@ def get_github_stats() -> dict:
         "stars": total_stars,
         "followers": followers,
         "following": following,
-        "commits": total_commits,
+        "commits": lifetime_commits if lifetime_commits > 0 else total_commits,
         "additions": total_additions,
         "deletions": total_deletions,
     }
@@ -190,11 +243,11 @@ def get_github_stats() -> dict:
             stats["repos"] = total_repos
 
     # If rate limited (e.g. public_repos == 0 and commits == 0), try to keep old values from README.md
-    if public_repos == 0 and total_commits == 0 and os.path.exists(README_PATH):
+    if public_repos == 0 and stats["commits"] == 0 and os.path.exists(README_PATH):
         with open(README_PATH, "r", encoding="utf-8") as f:
             old_text = f.read()
         repos_m = re.search(r"Repos:\s*([^\n]+)", old_text)
-        commits_m = re.search(r"Commits:\s*([\d,]+)", old_text)
+        commits_m = re.search(r"Commits(?:\.All)?:\s*([\d,]+)", old_text)
         loc_m = re.search(r"(?:GitHub\s+)?LOC:\s*[^(]+\(\s*\+([\d,]+),\s*\-([\d,]+)\s*\)", old_text)
         if repos_m:
             stats["repos_str"] = repos_m.group(1).strip()
@@ -272,7 +325,7 @@ def build_info_lines(stats: dict, uptime: str) -> list[str]:
         "",
         "__STATS_SEP__",
         f"{'Repos:':<{K}}{repos_display}",
-        f"{'Commits:':<{K}}{stats['commits']:,}",
+        f"{'Commits.All:':<{K}}{stats['commits']:,}",
         f"{'LOC:':<{K}}{loc_str}",
         f"{'Research Years:':<{K}}2+",
         f"{'Publications:':<{K}}9",

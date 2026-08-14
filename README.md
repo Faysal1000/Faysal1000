@@ -31,7 +31,7 @@ ________/_]_[_\___________  Research.Robotics:     Humanoid Robotics, Reinforcem
                             
                             Stats ────────────────────────────────────────────────────────────────────
                             Repos:                 16 (12 public, 4 private)
-                            Commits:               302
+                            Commits.All:           633
                             LOC:                   10.2M (+9,585,366, -653,659)
                             Research Years:        2+
                             Publications:          9
