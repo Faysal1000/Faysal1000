@@ -1,37 +1,35 @@
 <!-- NEOFETCH:START -->
 ```
-                            faysalahmmed
-                            ──────────────────────────────────────────────────
+                            Faysal Ahmmed
+                            ──────────────────────────────────────────────────────────────────────────
                             OS:                    Human
                             Uptime:                25 years, 3 months, 20 days
                             Host:                  Dhaka, Bangladesh
-          /~\               Kernel:                Computer Scientist
-         |o o)  Hi there!                          (AI • Robotics • ML)
-         _\=/_              
-    #   /  _  \   #         Languages.Programming: Python, C++, TypeScript,
-      \//|/.\|\//                                  C#, MATLAB
-      \/  \_/  \/           Languages.Real:        English, Bengali
-         |\ /|              
-         \_ _/              Frameworks.ML:         PyTorch, TensorFlow,
-         | | |                                     OpenCV, Scikit-Learn
-         | | |              Frameworks.Backend:    Node.js, NestJS, Docker
-         []|[]              Frameworks.Frontend:   React.js, Tailwind CSS
+          /~\               Kernel:                Computer Scientist (AI • Robotics • ML)
+         |o o)  Hi there!   
+         _\=/_              Languages.Programming: Python, C++, TypeScript, C#, MATLAB
+    #   /  _  \   #         Languages.Real:        English, Bengali
+      \//|/.\|\//           
+      \/  \_/  \/           Frameworks.ML:         PyTorch, TensorFlow, OpenCV, Scikit-Learn
+         |\ /|              Frameworks.Backend:    Node.js, NestJS, Docker, REST
+         \_ _/              Frameworks.Frontend:   React.js, Tailwind CSS
          | | |              Database:              PostgreSQL, MySQL, Redis
-________/_]_[_\___________  
-                            Research.AI:           Multimodal AI, Medical AI,
-                                                   Computer Vision, Misinfo
-                            Research.Robotics:     Humanoid, RL, Medical
-                                                   Robotics, Motion RT
+         | | |              
+         []|[]              Research.AI:           Multimodal AI, Medical AI,
+         | | |                                     Computer Vision, Misinformation Detection
+________/_]_[_\___________  Research.Robotics:     Humanoid Robotics, Reinforcement Learning,
+                                                   Medical Robotics, Motion Retargeting
                             
-                            Education:             BSc CSE (2026), AIUB
+                            Education:             BSc in Computer Science & Engineering (2026)
+                                                   American International University-Bangladesh (AIUB)
                             
-                            Contact ──────────────────────────────────────────
+                            Contact ──────────────────────────────────────────────────────────────────
                             Portfolio:             faysalahmmed.vercel.app
                             Email:                 faysalahmmed4200@gmail.com
                             ORCID:                 0009-0002-2981-1600
                             Facebook:              faysal.ahmmed.2001
                             
-                            Stats ────────────────────────────────────────────
+                            Stats ────────────────────────────────────────────────────────────────────
                             Repos:                 12
                             Commits:               302
                             LOC:                   10.2M (+9.6M, -0.7M)
@@ -39,9 +37,8 @@ ________/_]_[_\___________
                             Publications:          9 (Q1/Q2: 5, 1st: 5)
                             Research Areas:        AI • Robotics • Vision
                             
-                            ──────────────────────────────────────────────────
-                            Status:                Applying for MS/PhD
-                                                   in Robotics 🤖
+                            ──────────────────────────────────────────────────────────────────────────
+                            Status:                Applying for MS/PhD by Research in Robotics 🤖
 ```
 <!-- NEOFETCH:END -->
 

@@ -186,7 +186,7 @@ def get_github_stats() -> dict:
 # INFO — Edit these lines to change what shows in your neofetch
 # ══════════════════════════════════════════════════════════════════════════
 
-MAX_WIDTH = 80  # GitHub code block safe width
+MAX_WIDTH = 110  # GitHub safe width
 
 
 def build_info_lines(stats: dict, uptime: str) -> list[str]:
@@ -210,38 +210,36 @@ def build_info_lines(stats: dict, uptime: str) -> list[str]:
     K = 23
 
     lines = [
-        "faysalahmmed",
-        "",  # separator placeholder (index 1)
+        "Faysal Ahmmed",
+        "__TOP_SEP__",
         f"{'OS:':<{K}}Human",
         f"{'Uptime:':<{K}}{uptime}",
         f"{'Host:':<{K}}Dhaka, Bangladesh",
-        f"{'Kernel:':<{K}}Computer Scientist",
-        f"{'':<{K}}(AI • Robotics • ML)",
+        f"{'Kernel:':<{K}}Computer Scientist (AI • Robotics • ML)",
         "",
-        f"{'Languages.Programming:':<{K}}Python, C++, TypeScript,",
-        f"{'':<{K}}C#, MATLAB",
+        f"{'Languages.Programming:':<{K}}Python, C++, TypeScript, C#, MATLAB",
         f"{'Languages.Real:':<{K}}English, Bengali",
         "",
-        f"{'Frameworks.ML:':<{K}}PyTorch, TensorFlow,",
-        f"{'':<{K}}OpenCV, Scikit-Learn",
-        f"{'Frameworks.Backend:':<{K}}Node.js, NestJS, Docker",
+        f"{'Frameworks.ML:':<{K}}PyTorch, TensorFlow, OpenCV, Scikit-Learn",
+        f"{'Frameworks.Backend:':<{K}}Node.js, NestJS, Docker, REST",
         f"{'Frameworks.Frontend:':<{K}}React.js, Tailwind CSS",
         f"{'Database:':<{K}}PostgreSQL, MySQL, Redis",
         "",
         f"{'Research.AI:':<{K}}Multimodal AI, Medical AI,",
-        f"{'':<{K}}Computer Vision, Misinfo",
-        f"{'Research.Robotics:':<{K}}Humanoid, RL, Medical",
-        f"{'':<{K}}Robotics, Motion RT",
+        f"{'':<{K}}Computer Vision, Misinformation Detection",
+        f"{'Research.Robotics:':<{K}}Humanoid Robotics, Reinforcement Learning,",
+        f"{'':<{K}}Medical Robotics, Motion Retargeting",
         "",
-        f"{'Education:':<{K}}BSc CSE (2026), AIUB",
+        f"{'Education:':<{K}}BSc in Computer Science & Engineering (2026)",
+        f"{'':<{K}}American International University-Bangladesh (AIUB)",
         "",
-        "",  # contact separator placeholder (index 25)
+        "__CONTACT_SEP__",
         f"{'Portfolio:':<{K}}faysalahmmed.vercel.app",
         f"{'Email:':<{K}}faysalahmmed4200@gmail.com",
         f"{'ORCID:':<{K}}0009-0002-2981-1600",
         f"{'Facebook:':<{K}}faysal.ahmmed.2001",
         "",
-        "",  # stats separator placeholder (index 31)
+        "__STATS_SEP__",
         f"{'Repos:':<{K}}{stats['repos']}",
         f"{'Commits:':<{K}}{stats['commits']:,}",
         f"{'LOC:':<{K}}{loc_str}",
@@ -249,22 +247,29 @@ def build_info_lines(stats: dict, uptime: str) -> list[str]:
         f"{'Publications:':<{K}}9 (Q1/Q2: 5, 1st: 5)",
         f"{'Research Areas:':<{K}}AI • Robotics • Vision",
         "",
-        "",  # bottom separator placeholder (index 39)
-        f"{'Status:':<{K}}Applying for MS/PhD",
-        f"{'':<{K}}in Robotics 🤖",
+        "__BOTTOM_SEP__",
+        f"{'Status:':<{K}}Applying for MS/PhD by Research in Robotics 🤖",
     ]
 
     # Auto-size separator lines to match widest content line
-    max_info = max(len(line) for line in lines)
+    content_lines = [l for l in lines if not l.startswith("__")]
+    max_info = max((len(line) for line in content_lines), default=40)
     sep = "─" * max_info
-    lines[1] = sep
-    lines[25] = f"Contact {'─' * (max_info - 8)}"
-    lines[31] = f"Stats {'─' * (max_info - 6)}"
-    lines[39] = sep
 
+    resolved = []
+    for line in lines:
+        if line == "__TOP_SEP__":
+            resolved.append(sep)
+        elif line == "__CONTACT_SEP__":
+            resolved.append(f"Contact {'─' * max(0, max_info - 8)}")
+        elif line == "__STATS_SEP__":
+            resolved.append(f"Stats {'─' * max(0, max_info - 6)}")
+        elif line == "__BOTTOM_SEP__":
+            resolved.append(sep)
+        else:
+            resolved.append(line)
 
-
-    return lines
+    return resolved
 
 
 def build_neofetch(ascii_lines: list[str], info_lines: list[str]) -> str:
