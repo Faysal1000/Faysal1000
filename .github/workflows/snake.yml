@@ -2,8 +2,7 @@ name: Generate Snake Animation
 
 on:
   schedule:
-    # Runs every 24 hours at 18:00 UTC (12:00 AM / Midnight Bangladesh time, UTC+6)
-    - cron: '0 18 * * *'
+    - cron: '0 0 * * *' # Runs at UTC 00:00
   workflow_dispatch: # Allow manual trigger from GitHub UI
   push:
     branches: [main]
