@@ -19,6 +19,7 @@ import os
 import re
 import json
 import calendar
+import time
 import urllib.request
 import urllib.error
 from datetime import date
@@ -111,6 +112,53 @@ def github_api(endpoint: str) -> dict | list:
         return {}
 
 
+def fetch_contributor_stats(repo_name: str, max_retries: int = 3, initial_delay: float = 2.0) -> list:
+    """Fetch /repos/{repo}/stats/contributors with retry for 202 responses.
+
+    GitHub computes repository statistics lazily.  The first request to a
+    stats endpoint often returns HTTP 202 with an empty body while GitHub
+    generates the data in the background.  Retrying after a short delay
+    usually yields the real data.
+    """
+    load_env()
+    token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+    url = f"https://api.github.com/repos/{repo_name}/stats/contributors"
+    headers = {
+        "Accept": "application/vnd.github.v3+json",
+        "User-Agent": GITHUB_USERNAME,
+    }
+    if token:
+        headers["Authorization"] = f"token {token}"
+
+    for attempt in range(max_retries + 1):
+        req = urllib.request.Request(url, headers=headers)
+        try:
+            with urllib.request.urlopen(req) as resp:
+                status = resp.getcode()
+                data = json.loads(resp.read().decode())
+        except urllib.error.HTTPError as e:
+            if e.code == 403:
+                print(f"   \u26a0\ufe0f  Rate limited on {repo_name}")
+            return []
+        except Exception:
+            return []
+
+        # 200 with actual data \u2014 success
+        if status == 200 and isinstance(data, list) and len(data) > 0:
+            return data
+
+        # 202 or empty 200 means stats are still computing \u2014 retry
+        if attempt < max_retries:
+            wait = initial_delay * (2 ** attempt)
+            print(f"   \u23f3 Stats for {repo_name} computing "
+                  f"(attempt {attempt + 1}/{max_retries + 1}), "
+                  f"retrying in {wait:.0f}s...")
+            time.sleep(wait)
+
+    print(f"   \u26a0\ufe0f  Could not fetch stats for {repo_name} after {max_retries + 1} attempts")
+    return []
+
+
 def github_graphql(query: str, variables: dict | None = None) -> dict:
     """Make a GitHub GraphQL API request."""
     load_env()
@@ -180,7 +228,7 @@ def get_github_stats() -> dict:
             continue
 
         # Get contributor stats (includes additions/deletions)
-        contributors = github_api(f"/repos/{repo_name}/stats/contributors")
+        contributors = fetch_contributor_stats(repo_name)
         if isinstance(contributors, list):
             for contributor in contributors:
                 author = contributor.get("author", {})
@@ -256,6 +304,27 @@ def get_github_stats() -> dict:
         if loc_m:
             stats["additions"] = int(loc_m.group(1).replace(",", ""))
             stats["deletions"] = int(loc_m.group(2).replace(",", ""))
+
+    # Guard against partial LOC data from GitHub's lazy stats computation.
+    # If the new LOC total drops more than 50% vs. the previous README value,
+    # the stats API likely returned incomplete data — preserve old values.
+    new_loc_total = stats["additions"] + stats["deletions"]
+    if os.path.exists(README_PATH):
+        with open(README_PATH, "r", encoding="utf-8") as f:
+            old_readme = f.read()
+        loc_match = re.search(
+            r"LOC:\s*[^(]+\(\s*\+([\d,]+),\s*-([\d,]+)\s*\)", old_readme
+        )
+        if loc_match:
+            old_add = int(loc_match.group(1).replace(",", ""))
+            old_del = int(loc_match.group(2).replace(",", ""))
+            old_loc_total = old_add + old_del
+            if old_loc_total > 0 and new_loc_total < old_loc_total * 0.5:
+                print(f"   ⚠️  LOC dropped suspiciously "
+                      f"({old_loc_total:,} → {new_loc_total:,}), "
+                      f"keeping previous values")
+                stats["additions"] = old_add
+                stats["deletions"] = old_del
 
     return stats
 

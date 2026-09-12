@@ -32,7 +32,7 @@ ________/_]_[_\___________
                             Stats ──────────────────────────────────────────────────────────────────────────────
                             Repos:                 17 (14 public, 3 private)
                             Commits.All:           668
-                            LOC:                   51K (+41,634, -9,325)
+                            LOC:                   10.3M (+9,627,000, -662,984)
                             Research Years:        2+
                             Publications:          10
                             Research Areas:        AI • Robotics • Vision
