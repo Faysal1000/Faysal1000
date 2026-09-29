@@ -397,7 +397,7 @@ def build_info_lines(stats: dict, uptime: str) -> list[str]:
         f"{'Commits.All:':<{K}}{stats['commits']:,}",
         f"{'LOC:':<{K}}{loc_str}",
         f"{'Research Years:':<{K}}2+",
-        f"{'Publications:':<{K}}10",
+        f"{'Publications:':<{K}}11",
         f"{'Research Areas:':<{K}}AI • Robotics • Vision",
         "",
         "__BOTTOM_SEP__",
