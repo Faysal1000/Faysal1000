@@ -3,7 +3,7 @@
                             Faysal Ahmmed
                             ────────────────────────────────────────────────────────────────────────────────────
                             OS:                    Human
-                            Uptime:                25 years, 5 months, 7 days
+                            Uptime:                25 years, 5 months, 8 days
                             Host:                  Dhaka, Bangladesh
                             Kernel:                Computer Scientist (AI • Robotics • ML)
                             
