@@ -333,7 +333,7 @@ def get_github_stats() -> dict:
 # INFO — Edit these lines to change what shows in your neofetch
 # ══════════════════════════════════════════════════════════════════════════
 
-MAX_WIDTH = 110  # GitHub safe width
+MAX_WIDTH = 120  # GitHub safe width
 
 
 def build_info_lines(stats: dict, uptime: str) -> list[str]:
@@ -388,9 +388,9 @@ def build_info_lines(stats: dict, uptime: str) -> list[str]:
         "",
         "__CONTACT_SEP__",
         f"{'Portfolio:':<{K}}faysalahmmed.vercel.app",
-        f"{'Email:':<{K}}faysalahmmed4200@gmail.com",
+        f"{'Email:':<{K}}ahmmed.faysal2001@gmail.com",
         f"{'ORCID:':<{K}}0009-0002-2981-1600",
-        f"{'Facebook:':<{K}}faysal.ahmmed.2001",
+        f"{'Facebook:':<{K}}ahmmed.faysal2001",
         "",
         "__STATS_SEP__",
         f"{'Repos:':<{K}}{repos_display}",
