@@ -3,7 +3,7 @@
                             Faysal Ahmmed
                             ────────────────────────────────────────────────────────────────────────────────────
                             OS:                    Human
-                            Uptime:                25 years, 5 months, 14 days
+                            Uptime:                25 years, 5 months, 15 days
                             Host:                  Dhaka, Bangladesh
                             Kernel:                Computer Scientist (AI • Robotics • ML)
                             
@@ -32,7 +32,7 @@ ________/_]_[_\___________
                             Stats ──────────────────────────────────────────────────────────────────────────────
                             Repos:                 17 (14 public, 3 private)
                             Commits.All:           673
-                            LOC:                   10.3M (+9,628,653, -663,956)
+                            LOC:                   10.3M (+9,628,466, -663,954)
                             Research Years:        2+
                             Publications:          11
                             Research Areas:        AI • Robotics • Vision
