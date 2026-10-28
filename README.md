@@ -1,7 +1,7 @@
 <!-- NEOFETCH:START -->
 ```
                             Faysal Ahmmed
-                            ────────────────────────────────────────────────────────────────────────────────────
+                            ──────────────────────────────────────────────────────────────────────────
                             OS:                    Human
                             Uptime:                25 years, 6 months, 3 days
                             Host:                  Dhaka, Bangladesh
@@ -23,22 +23,22 @@
          []|[]              Education.Latest:      BSc in Computer Science & Engineering (2026)
          | | |                                     American International University-Bangladesh (AIUB)
 ________/_]_[_\___________  
-                            Contact ────────────────────────────────────────────────────────────────────────────
+                            Contact ──────────────────────────────────────────────────────────────────
                             Portfolio:             faysalahmmed.vercel.app
                             Email:                 ahmmed.faysal2001@gmail.com
                             ORCID:                 0009-0002-2981-1600
                             Facebook:              ahmmed.faysal2001
                             
-                            Stats ──────────────────────────────────────────────────────────────────────────────
+                            Stats ────────────────────────────────────────────────────────────────────
                             Repos:                 17 (14 public, 3 private)
-                            Commits.All:           673
-                            LOC:                   10.3M (+9,628,653, -663,956)
+                            Commits.All:           675
+                            LOC:                   10.3M (+9,628,654, -663,957)
                             Research Years:        2+
                             Publications:          11
                             Research Areas:        AI • Robotics • Vision
                             
-                            ────────────────────────────────────────────────────────────────────────────────────
-                            Status:                Applying for MS/PhD by Research in Autonomous Systems or AI 🤖
+                            ──────────────────────────────────────────────────────────────────────────
+                            Status:                Exploring new tenhnologies
 ```
 <!-- NEOFETCH:END -->
 
