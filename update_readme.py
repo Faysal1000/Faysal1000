@@ -401,7 +401,7 @@ def build_info_lines(stats: dict, uptime: str) -> list[str]:
         f"{'Research Areas:':<{K}}AI • Robotics • Vision",
         "",
         "__BOTTOM_SEP__",
-        f"{'Status:':<{K}}Applying for MS/PhD by Research in Autonomous Systems or AI 🤖",
+        f"{'Status:':<{K}}Exploring new tenhnologies",
     ]
 
     # Auto-size separator lines to match widest content line
